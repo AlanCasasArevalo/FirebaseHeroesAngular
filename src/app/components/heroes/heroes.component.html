@@ -38,20 +38,17 @@
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
                 </tbody>
             </table>
+
+            <div *ngIf="(heroes | pipeKeys).length === 0 && !isLoading" class="alert alert-info" role="alert">
+                <strong>No hay mas registros para mostrar</strong>
+            </div>
+
+            <div *ngIf="isLoading" class="alert alert-warning" role="alert">
+                <strong>Cargando....</strong> Por favor espere
+            </div>
+
         </div>
     </div>
 </div>

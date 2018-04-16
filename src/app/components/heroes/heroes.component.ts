@@ -10,6 +10,7 @@ import { Hero } from '../../models/hero.model';
 export class HeroesComponent implements OnInit {
 
   heroes: any[] = [];
+  isLoading = true;
 
   constructor(
     private _heroesServices: HeroesService
@@ -23,9 +24,18 @@ export class HeroesComponent implements OnInit {
   getAllHeroes() {
     this._heroesServices.getHeroes()
       .subscribe( (response: any) => {
+        // console.log('Heroes recibidos en heroes.component.ts');
+        // console.log(this.heroes);
+
         this.heroes = response;
-        console.log('Heroes recibidos en heroes.component.ts');
-        console.log(this.heroes);
+        this.isLoading = false;
+
+        // Just to test isLoading.
+        // setTimeout(() => {
+        //   this.isLoading = false;
+        //   this.heroes = response;
+        // }, 3000);
+
       });
   }
 
