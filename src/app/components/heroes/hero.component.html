@@ -2,10 +2,11 @@
 <hr>
 
 <button type="button" class="btn btn-outline-danger" [routerLink]="['heroes']">Regresar</button>
+<button type="button" class="btn btn-outline-success" (click)="addNewHero( form )">Nuevo heroe</button>
 
 <div class="row animated fadeIn fast">
     <div class="col-md-12">
-        <form (ngSubmit)="saveForm()" #form="ngForm">
+        <form (ngSubmit)="saveHeroIntoFireBase()" #form="ngForm">
             <div class="form-group">
                 <label>Nombre</label>
 

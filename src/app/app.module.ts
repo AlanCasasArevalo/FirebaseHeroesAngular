@@ -13,6 +13,7 @@ import { APP_ROUTING } from './app.routes';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/heroes/hero.component';
+import { PipeKeysPipe } from './pipes/pipe-keys.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HeroComponent } from './components/heroes/hero.component';
     AppComponent,
     HeroesComponent,
     HeroComponent,
+    PipeKeysPipe,
   ],
   imports: [
     BrowserModule,

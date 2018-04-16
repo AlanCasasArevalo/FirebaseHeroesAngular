@@ -19,15 +19,16 @@
                         <th>#</th>
                         <th>Nombre</th>
                         <th>Casa</th>
-                        <th>Ociones</th>
+                        <th>Historia</th>
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let k of heroes | pipeKeys; let i = index">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ heroes[k].name }}</td>
+                        <td>{{ heroes[k].house }}</td>
+                        <td>{{ heroes[k].history }}</td>
                     </tr>
                     <tr>
                         <td></td>
