@@ -69,4 +69,15 @@ export class HeroesService {
               });
   }
 
+  deleteHeroFromFirebase( key$: string ) {
+    const url = `${ this.baseFireBaseURL }/${ key$ }.json`;
+
+    return this.http.delete( url )
+              .map( (response: any) => {
+                console.log('Respuesta en el Servicio Al obtener heroe por ID');
+                console.log(response);
+                return response.json() ;
+              });
+  }
+
 }

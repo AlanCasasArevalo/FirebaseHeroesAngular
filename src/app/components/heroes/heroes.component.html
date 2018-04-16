@@ -20,15 +20,23 @@
                         <th>Nombre</th>
                         <th>Casa</th>
                         <th>Historia</th>
-                        <th>Opciones</th>
+                        <th class="test-right">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let k of heroes | pipeKeys; let i = index">
+                    <tr *ngFor="let key of heroes | pipeKeys; let i = index">
                         <td>{{ i + 1 }}</td>
-                        <td>{{ heroes[k].name }}</td>
-                        <td>{{ heroes[k].house }}</td>
-                        <td>{{ heroes[k].history }}</td>
+                        <td>{{ heroes[key].name }}</td>
+                        <td>{{ heroes[key].house }}</td>
+                        <td>{{ heroes[key].history }}</td>
+                        <td class="test-right">
+                            <button type="button" class="btn-outline-success" [routerLink]="['/hero', key]">
+                                    Editar
+                            </button>
+                            <button type="button" class="btn-outline-danger" (click)="deleteHeroFromFirebase(key)">
+                                    Borrar
+                            </button>
+                        </td>
                     </tr>
                     <tr>
                         <td></td>
